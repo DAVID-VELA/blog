@@ -1,29 +1,16 @@
 ---
+import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <style>
-      img {
-        max-width: 70%;
-        height: auto;
-        margin: 0 auto;
-        display: block;
-      }
-    </style>
-  </head>
-  <body style="display: grid; grid-template-rows: .5fr 1.5fr; row-gap:2%">
-    <section>
-      <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
-      <p><em>{frontmatter.description}</em></p>
-      <p>Escrito por: {frontmatter.author}</p>
-      <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
-    </section>
-    <section>
-      <slot />
-    </section>
-  </body>
-</html>
+<BaseLayout pageTitle={frontmatter.title}>
+  <section>
+    <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <p>Escrito por: {frontmatter.author}</p>
+    <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+  </section>
+  <section>
+    <slot />
+  </section>
+</BaseLayout>
