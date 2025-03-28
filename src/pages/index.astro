@@ -1,6 +1,9 @@
 ---
 import "../styles/global.css";
 const pageTitle = "Home";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Hamburger from "../components/Hamburger.astro";
 ---
 
 <html lang="es">
@@ -12,10 +15,13 @@ const pageTitle = "Home";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Inicio</a>
-    <a href="/about/">Sobre mi</a>
-    <a href="/blog/">Blog</a>
+    <Header />
+    <Hamburger />
 
     <h1>{pageTitle}</h1>
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>
