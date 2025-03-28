@@ -1,9 +1,10 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi tercera publicación en el blog
-author: Alumno de Astro
+author: David Vela
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
 image:
-  url: "https://docs.astro.build/assets/rays.webp"
+  url: "https://th.bing.com/th/id/OIP.tLotgCDtzgTdwJcTiXWRCwHaEK?rs=1&pid=ImgDetMain"
   alt: "Miniatura de los rayos de Astro."
 pubDate: 2022-07-15
 tags: ["astro", "aprender en público", "contratiempos", "comunidad"]
