@@ -5,7 +5,9 @@ export async function GET(context) {
     title: "David Vela | Blog",
     description: "Mi viaje de aprendizaje de Astro",
     site: context.site,
-    items: await pagesGlobToRssItems(import.meta.glob("./**/*.md")),
+    items: await pagesGlobToRssItems(
+      import.meta.glob("@content/posts/**/*.md")
+    ),
     customData: `<language>es-ec</language>`,
   });
 }

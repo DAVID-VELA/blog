@@ -1,9 +1,7 @@
 ---
-import BlogPost from "../../components/BlogPost.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "@components/BlogPost.astro";
+import BaseLayout from "@layouts/base/BaseLayout.astro";
 import type { PathData } from "./types";
-
-
 
 export async function getStaticPaths(): Promise<PathData[]> {
   const allPosts = await Astro.glob("../posts/*.md");

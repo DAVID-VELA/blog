@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/mark-down-post/MarkdownPostLayout.astro
 title: Mi cuarta entrada en el blog
 author: David Vela
 description: "Esta entrada aparecerá sola!"
@@ -9,4 +9,5 @@ image:
 pubDate: 2025-03-28
 tags: ["astro", "éxitos"]
 ---
+
 Esta entrada debería aparecer con las demás entradas de mi blog, porque `Astro.glob()` está devolviendo una lista de todas mis entradas para crear mi lista.

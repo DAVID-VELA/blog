@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/mark-down-post/MarkdownPostLayout.astro
 title: Mi segunda publicación en el blog
 author: David Vela
 description: "Después de aprender un poco de Astro, ¡no podía parar!"
