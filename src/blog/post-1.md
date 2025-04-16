@@ -1,11 +1,10 @@
 ---
-layout: ../../layouts/mark-down-post/MarkdownPostLayout.astro
 title: "Mi primera publicación en el blog"
-pubDate: 2022-07-01
+pubDate: 2022-08-09
 description: "Este es la primera publicación de mi nuevo blog Astro."
 author: "David Vela"
 image:
-  url: "https://th.bing.com/th?id=OIF.bJLFIAQwjgVZx%2fYN3o%2fy8Q&rs=1&pid=ImgDetMain"
+  url: "https://images.pexels.com/photos/31570908/pexels-photo-31570908/free-photo-of-piloto-de-motocross-dinamico-en-accion-en-una-moto-de-cross.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   alt: "El logotipo completo de Astro."
 tags: ["astro", "bloguear", "aprender en público"]
 ---

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/mark-down-post/MarkdownPostLayout.astro
 title: Mi cuarta entrada en el blog
 author: David Vela
 description: "Esta entrada aparecerá sola!"

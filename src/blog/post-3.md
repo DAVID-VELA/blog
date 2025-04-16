@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/mark-down-post/MarkdownPostLayout.astro
 title: Mi tercera publicación en el blog
 author: David Vela
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
