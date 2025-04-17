@@ -1,0 +1,42 @@
+---
+import { Github, Instagram, Linkedin } from "./Icon/index";
+
+// Define el tipo para los nombres de iconos disponibles
+export type IconName = "github" | "instagram" | "linkedin";
+
+// Define las props del componente
+// Extendemos HTMLAttributes<SVGElement> para obtener todos los atributos válidos de SVG
+interface Props extends astroHTML.JSX.SVGAttributes {
+  name: IconName;
+  // Aquí puedes definir props adicionales específicas de tu componente
+}
+
+// Obtén la prop tipada correctamente
+const { name, ...restProps } = Astro.props;
+
+// Mapeo de nombres a componentes de iconos
+const iconMap: Record<
+  IconName,
+  typeof Github | typeof Instagram | typeof Linkedin
+> = {
+  github: Github,
+  instagram: Instagram,
+  linkedin: Linkedin,
+};
+
+// Obtén el componente del icono
+const IconComponent = iconMap[name];
+---
+
+<div>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...restProps}
+  >
+    <IconComponent />
+  </svg>
+</div>

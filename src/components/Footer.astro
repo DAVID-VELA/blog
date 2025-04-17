@@ -1,17 +1,111 @@
 ---
+import SOCIAL_PLATAFORMS from "@/constants/social-plataforms";
 import Social from "./Social.astro";
+import NAV_LINKS from "@/constants/nav-links";
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("blog");
+const tags = [
+  ...new Set(
+    allPosts
+      .map((post) => post?.data?.tags)
+      .flat()
+      .splice(0, 5)
+  ),
+];
+const param = Astro.params;
+console.log(param);
 ---
 
 <style>
   footer {
-    display: flex;
+    display: grid;
+    width: 100%;
+    height: auto;
     gap: 1rem;
-    margin-top: 2rem;
+    padding: 1rem;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    background-color: var(--color-dark-navy);
+    color: var(--color-bone-white);
+  }
+  .first-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .first-section ul {
+    display: flex;
+    flex-direction: row;
+  }
+  li {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    list-style: none;
+    margin-inline: 1rem;
+  }
+  .second-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    padding-bottom: 1em;
+  }
+  .second-section a {
+    text-decoration: none;
+    color: slategrey;
+    margin-bottom: 0.5em;
+  }
+  .second-section a:hover {
+    color: var(--color-bone-white);
+    transition: color 0.3s;
+  }
+  .second-section > div {
+    display: flex;
+    flex-direction: column;
+  }
+  .third-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .first-section,
+  .second-section {
+    border-bottom: solid 1px #fff;
+  }
+  html.dark .first-section,
+  html.dark .second-section {
+    border-bottom: solid 1px var(--color-mint-cream);
   }
 </style>
 
 <footer>
-  <Social platform="github" username="davidvela-306" />
-  <Social platform="linkedin" username="davidvela306" />
-  <Social platform="instagram" username="davidvela306" />
+  <div class="first-section">
+    <p>DAVID VELA</p>
+    <ul>
+      {
+        SOCIAL_PLATAFORMS.map((p) => (
+          <li class={`social-icon`}>
+            <Social color={p.color} platform={p.plataform} url={p.url} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="second-section">
+    <div>
+      <h3>Pages</h3>
+      {NAV_LINKS.map((l) => <a href={l.path}>{l.routeName}</a>)}
+    </div>
+    <div>
+      <h3>Tags</h3>
+      {tags.map((tag) => <a href={`/tags/${tag}`}>{tag}</a>)}
+      <a href={`/tags/`}>Ver más...</a>
+    </div>
+  </div>
+  <div class="third-section">
+    <p>
+      &copy; {new Date().getFullYear()} David Vela - Todos los derechos reservados
+    </p>
+  </div>
 </footer>

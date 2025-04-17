@@ -3,7 +3,11 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import "@styles/global.css";
 import "./baseLayout.css";
-const { pageTitle = "Sin título" } = Astro.props;
+interface Props {
+  pageTitle?: string;
+  showTitle?: boolean;
+}
+const { pageTitle = "Sin título", showTitle = true } = Astro.props as Props;
 ---
 
 <html lang="es">
@@ -17,8 +21,10 @@ const { pageTitle = "Sin título" } = Astro.props;
   </head>
   <body>
     <Header />
-    <h1>{pageTitle}</h1>
-    <slot />
+    <main>
+      {showTitle && <h1>{pageTitle}</h1>}
+      <slot />
+    </main>
     <Footer />
     <script>
       /* Hamburger menu */

@@ -1,14 +1,21 @@
 ---
-const { platform, username } = Astro.props;
+import Icon from "./Icon.astro";
+import type { IconName } from "./Icon.astro";
+
+interface Props {
+  platform: IconName;
+  url: string;
+  color: string;
+}
+const { url, platform, color } = Astro.props as Props;
 ---
 
 <style>
-  a {
-    padding: 0.5rem 1rem;
-    color: white;
-    background-color: #4c1d95;
-    text-decoration: none;
+  .social-icon:hover {
+    color: #fff; /* Cambia el color a blanco cuando se active el evento de hover */
   }
 </style>
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a href={url}>
+  <Icon name={platform} color={color} />
+</a>

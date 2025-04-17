@@ -5,21 +5,27 @@ html {
   font-family: sans-serif;
   transition: background-color 0.3s ease-in-out;
 }
-
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
-}
-
 * {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+body main {
+  min-height: 70vh;
+}
+body main,
+header {
+  margin: 0 auto;
+  width: 100%;
+  line-height: 1.5;
+  max-width: 80ch;
+  padding: 1rem;
+}
+
 html.dark {
-  background-color: var(--color-dark-navy);
+  background-color: var(--color-blue-deep-sea);
   color: var(--color-bone-white);
 }
 
