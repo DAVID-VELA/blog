@@ -1,8 +1,8 @@
 ---
-import { Github, Instagram, Linkedin } from "./Icon/index";
-
+import { Github, Instagram, Linkedin, Hamburger } from "./Icon/index";
+/*  svg sprinte, search */
 // Define el tipo para los nombres de iconos disponibles
-export type IconName = "github" | "instagram" | "linkedin";
+export type IconName = "github" | "instagram" | "linkedin" | "hamburger";
 
 // Define las props del componente
 // Extendemos HTMLAttributes<SVGElement> para obtener todos los atributos válidos de SVG
@@ -22,13 +22,13 @@ const iconMap: Record<
   github: Github,
   instagram: Instagram,
   linkedin: Linkedin,
+  hamburger: Hamburger,
 };
 
 // Obtén el componente del icono
 const IconComponent = iconMap[name];
 ---
 
-<div>
   <svg
     width="24"
     height="24"
@@ -39,4 +39,3 @@ const IconComponent = iconMap[name];
   >
     <IconComponent />
   </svg>
-</div>

@@ -2,12 +2,16 @@
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import "@styles/global.css";
-import "./baseLayout.css";
 interface Props {
   pageTitle?: string;
   showTitle?: boolean;
+  fullWidth?: boolean;
 }
-const { pageTitle = "Sin título", showTitle = true } = Astro.props as Props;
+const {
+  pageTitle = "Sin título",
+  showTitle = true,
+  fullWidth = false,
+} = Astro.props as Props;
 ---
 
 <html lang="es">
@@ -19,10 +23,16 @@ const { pageTitle = "Sin título", showTitle = true } = Astro.props as Props;
     <title>{pageTitle}</title>
     <style></style>
   </head>
-  <body>
+  <body class="bg-bone-white dark:bg-blue-deep-sea">
     <Header />
-    <main>
-      {showTitle && <h1>{pageTitle}</h1>}
+    <main class=` ${fullWidth ? "w-full" : "w-5/8"} pb-5 md:pb-10`>
+      {
+        showTitle && (
+          <h1 class="bg-gradient-to-bl from-dark-navy via-blue-teal to-sea-green bg-clip-text text-transparent animate-text-reveal ">
+            {pageTitle}
+          </h1>
+        )
+      }
       <slot />
     </main>
     <Footer />

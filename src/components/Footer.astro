@@ -16,94 +16,56 @@ const param = Astro.params;
 console.log(param);
 ---
 
-<style>
-  footer {
-    display: grid;
-    width: 100%;
-    height: auto;
-    gap: 1rem;
-    padding: 1rem;
-    grid-template-rows: 0.5fr 1fr 0.5fr;
-    background-color: var(--color-dark-navy);
-    color: var(--color-bone-white);
-  }
-  .first-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .first-section ul {
-    display: flex;
-    flex-direction: row;
-  }
-  li {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    list-style: none;
-    margin-inline: 1rem;
-  }
-  .second-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    overflow: hidden;
-    padding-bottom: 1em;
-  }
-  .second-section a {
-    text-decoration: none;
-    color: slategrey;
-    margin-bottom: 0.5em;
-  }
-  .second-section a:hover {
-    color: var(--color-bone-white);
-    transition: color 0.3s;
-  }
-  .second-section > div {
-    display: flex;
-    flex-direction: column;
-  }
-  .third-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .first-section,
-  .second-section {
-    border-bottom: solid 1px #fff;
-  }
-  html.dark .first-section,
-  html.dark .second-section {
-    border-bottom: solid 1px var(--color-mint-cream);
-  }
-</style>
-
-<footer>
-  <div class="first-section">
+<footer class="grid gap-3 p-3 md:p-10 bg-dark-navy text-bone-white">
+  <div class="first-section flex justify-between items-center">
     <p>DAVID VELA</p>
-    <ul>
+    <ul class="flex flex-row items-center gap-x-2">
       {
         SOCIAL_PLATAFORMS.map((p) => (
-          <li class={`social-icon`}>
+          <li class="social-icon flex items-center mx-1rem">
             <Social color={p.color} platform={p.plataform} url={p.url} />
           </li>
         ))
       }
     </ul>
   </div>
-  <div class="second-section">
-    <div>
-      <h3>Pages</h3>
-      {NAV_LINKS.map((l) => <a href={l.path}>{l.routeName}</a>)}
+  <hr class="border-sea-green" />
+  <div class="second-section grid grid-cols-2 overflow-hidden pb-1em">
+    <div class="flex flex-col">
+      <h3 class="text-sea-green">Pages</h3>
+      {
+        NAV_LINKS.map((l) => (
+          <a
+            href={l.path}
+            class="text-gray-300 hover:text-white transition-colors duration-300"
+          >
+            {l.routeName}
+          </a>
+        ))
+      }
     </div>
-    <div>
-      <h3>Tags</h3>
-      {tags.map((tag) => <a href={`/tags/${tag}`}>{tag}</a>)}
-      <a href={`/tags/`}>Ver más...</a>
+    <div class="flex flex-col">
+      <h3 class="text-sea-green">Tags</h3>
+      {
+        tags.map((tag) => (
+          <a
+            href={`/tags/${tag}`}
+            class="text-gray-300 hover:text-white transition-colors duration-300"
+          >
+            {tag}
+          </a>
+        ))
+      }
+      <a
+        href={`/tags/`}
+        class="text-gray-300 hover:text-bone-white transition-colors duration-300"
+      >
+        Ver más...
+      </a>
     </div>
   </div>
-  <div class="third-section">
+  <hr class="border-sea-green" />
+  <div class="third-section flex justify-center items-center text-center">
     <p>
       &copy; {new Date().getFullYear()} David Vela - Todos los derechos reservados
     </p>
