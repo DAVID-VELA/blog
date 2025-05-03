@@ -7,23 +7,23 @@ import { Badge } from "@components/index";
 >
   <!-- Background gradients - optimized colors and positioning -->
   <div
-    class="absolute bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 blur-[100px] opacity-20 w-[40%] aspect-square rounded-full -top-20 -left-20 animate-float"
+    class="absolute bg-gradient-to-br from-sea-green via-mint-green to-blue-teal dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500 blur-3xl opacity-40 dark:opacity-20 w-72 md:w-5/12 aspect-square rounded-full -top-20 -left-20 animate-float"
   >
   </div>
   <div
-    class="absolute bg-gradient-to-tr from-emerald-400 via-teal-300 to-cyan-400 blur-[120px] opacity-20 w-[50%] aspect-square rounded-full -bottom-20 -right-20 animate-float-reverse"
+    class="absolute bg-gradient-to-tr from-emerald-400 via-teal-300 to-cyan-400 blur-3xl opacity-30 dark:opacity-20 w-96 md:w-6/12 aspect-square rounded-full -bottom-20 -right-20 animate-float-reverse"
   >
   </div>
 
   <!-- Main content with better typography and animation -->
-  <div class="relative z-10 text-center px-4">
+  <div class="z-10 text-center px-4">
     <h1
-      class="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-dark-navy via-blue-teal to-sea-green dark:from-white dark:via-gray-500 dark:to-gray-900 mb-2 animate-fade-in"
+      class="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-dark-navy via-blue-teal to-sea-green dark:from-mint-green dark:via-sea-green/50 dark:to-sea-green mb-2 animate-fade-in"
     >
       DAVID VELA
     </h1>
     <h2
-      class="text-3xl md:text-4xl font-medium text-gray-600 dark:text-gray-300 tracking-wider animate-fade-in-delay-1"
+      class="text-3xl md:text-4xl font-medium text-gray-600 dark:text-gray-300 tracking-wider animate-fade-in"
     >
       SOFTWARE DEVELOPER
     </h2>
@@ -31,14 +31,16 @@ import { Badge } from "@components/index";
     <!-- Subtle CTA button -->
     <a
       href="whatsapp://send?phone=+593998675192"
-      class="mt-12 inline-block px-8 py-3 rounded-full bg-blue-teal/10 dark:bg-white/10 backdrop-blur-sm border border-blue-teal/20 dark:border-white/20 hover:bg-blue-teal/20 dark:hover:bg-white/20 transition-all duration-300 text-blue-teal dark:text-white animate-fade-in-delay-2"
+      class="mt-12 inline-block px-8 py-3 rounded-full bg-blue-teal/10 dark:bg-white/10 backdrop-blur-sm border border-blue-teal/20 dark:border-white/20 hover:bg-blue-teal/20 dark:hover:bg-white/20 transition-all duration-300 text-blue-teal dark:text-white animate-float-slow"
     >
       Contáctame
     </a>
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+  <div
+    class="absolute bottom-12 left-1/2 -translate-x-1/2 flex justify-center mt-12 w-full animate-bounce"
+  >
     <svg
       width="24"
       height="24"

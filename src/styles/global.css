@@ -20,7 +20,7 @@
 @keyframes float-slow {
   0%,
   100% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1);
   }
   50% {
     transform: translate(var(--float-distance, 10%), var(--float-distance, 10%))
@@ -47,25 +47,25 @@
   50%,
   80%,
   100% {
-    transform: translateY(0) translateX(-50%);
+    transform: translateY(0);
   }
   40% {
-    transform: translateY(-20px) translateX(-50%);
+    transform: translateY(-20px);
   }
   60% {
-    transform: translateY(-10px) translateX(-50%);
+    transform: translateY(-10px);
   }
 }
 
 /* Clases utilitarias para aplicar las animaciones */
 .animate-float {
-  animation: float-slow 15s ease-in-out infinite;
-  --float-distance: 10%; /* Personaliza con CSS variables */
+  animation: float-slow 10s ease-in-out infinite;
+  --float-distance: 30%; /* Personaliza con CSS variables */
   --float-scale: 1.03;
 }
 
 .animate-float-reverse {
-  animation: float-slow 18s ease-in-out infinite reverse;
+  animation: float-slow 5s ease-in-out infinite reverse;
 }
 
 .animate-fade-in {
@@ -81,13 +81,27 @@
 }
 
 .animate-bounce {
-  animation: gentle-bounce 2s infinite;
+  animation: bounce 1s infinite;
+  animation-timing-function: ease-out;
+  transform-origin: center;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Efecto de aparición gradual para textos */
 .animate-text-reveal {
-  animation: fade-in-up 0.8s ease-out forwards,
-    float-slow 20s ease-in-out infinite;
+  animation: fade-in-up 0.1s ease-out forwards,
+    float-slow 10s ease-in-out infinite;
 }
 
 /*  ===== CUSTOM ===== */
