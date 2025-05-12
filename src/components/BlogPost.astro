@@ -1,7 +1,20 @@
 ---
-const { url, title } = Astro.props;
+const { url, title, descripcion, imagen } = Astro.props;
 ---
 
-<li>
-  <a href={url}>{title}</a>
+<li class="flex items-center mb-4">
+  <img
+    src={imagen}
+    alt={title}
+    class="w-12 h-12 object-cover rounded-full mr-4"
+  />
+  <div>
+    <a
+      href={url}
+      class="text-lg font-bold hover:text-mint-green underline animate-bounce"
+    >
+      {title}
+    </a>
+    <p class="text-sm text-gray-600">{descripcion}</p>
+  </div>
 </li>

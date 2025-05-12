@@ -1,7 +1,134 @@
 ---
+import Card from "./ui/Card.astro";
 
+const projects = [
+  {
+    title: "Sistema de Gestión de Estacionamientos",
+    description:
+      "Plataforma web que optimiza la administración de espacios de parqueo mediante sensores IoT para un monitoreo en tiempo real.",
+    image:
+      "https://raw.githubusercontent.com/Davidvela-306/frontendPoliparking/refs/heads/001/fix-new-dispotion-parking-spaces/public/landing.png",
+    link: "https://frontend-poliparking.vercel.app/",
+    tags: ["React", "Tailwind", "Node.js"],
+  },
+  {
+    title: "Visualización de imágenes de la tierra en tiempo real",
+    description:
+      "Consumo de diferentes APIs para visualizar imagenes de la tierra en tiempo real ofrecidas por la Nasa.",
+    image:
+      "https://raw.githubusercontent.com/Davidvela-306/ApiEpico/refs/heads/main/public/api_nasa.png",
+    link: "https://davidvela-306.github.io/ApiEpico/",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+];
 ---
 
-<section>
-  <p>Portfolio</p>
+<section class="py-20 px-5 relative">
+  <!-- SVG como fondo -->
+  <!-- <div class="absolute top-0 left-0 w-full h-full">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:svgjs="http://svgjs.dev/svgjs"
+      viewBox="0 0 800 800"
+      ><defs
+        ><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="nnneon-grad"
+          ><stop stop-color="#dafdba" stop-opacity="1" offset="0%"></stop><stop
+            stop-color="#45c4b0"
+            stop-opacity="1"
+            offset="100%"></stop></linearGradient
+        ><filter
+          id="nnneon-filter"
+          x="-100%"
+          y="-100%"
+          width="400%"
+          height="400%"
+          filterUnits="objectBoundingBox"
+          primitiveUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feGaussianBlur
+            stdDeviation="29 17"
+            x="0%"
+            y="0%"
+            width="100%"
+            height="100%"
+            in="SourceGraphic"
+            edgeMode="none"
+            result="blur"></feGaussianBlur></filter
+        ><filter
+          id="nnneon-filter2"
+          x="-100%"
+          y="-100%"
+          width="400%"
+          height="400%"
+          filterUnits="objectBoundingBox"
+          primitiveUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feGaussianBlur
+            stdDeviation="22 28"
+            x="0%"
+            y="0%"
+            width="100%"
+            height="100%"
+            in="SourceGraphic"
+            edgeMode="none"
+            result="blur"></feGaussianBlur></filter
+        ></defs
+      ><g
+        stroke-width="11.5"
+        stroke="url(#nnneon-grad)"
+        fill="none"
+        transform="rotate(52, 400, 400)"
+        ><path
+          d="M388.145091002548 229.0201956509717C395.4809086901713 224.78562215708183 404.5190913098287 224.78562215708183 411.854908997452 229.02138114187147L542.1451008430486 304.2443352034037C549.4809185306719 308.47890869729355 554.0000098405006 316.3067051083111 554.0000098405006 324.7770375869906V475.2229457100551C554.0000098405006 483.69327818873455 549.4809185306719 491.5210745997522 542.1451008430486 495.7568335845417L411.854908997452 570.979787646074C404.5190913098287 575.2143611399638 395.4809086901713 575.2143611399638 388.145091002548 570.9786021551743L257.8548991569514 495.7556480936421C250.5190814693281 491.5210745997522 245.99999015949936 483.69327818873455 245.99999015949936 475.2229457100551V324.7770375869906C245.99999015949936 316.3067051083111 250.5190814693281 308.47890869729355 257.8548991569514 304.24314971250396L388.145091002548 229.0201956509717Z "
+          filter="url(#nnneon-filter)"></path><path
+          d="M400.145091002548 229.0201956509717C407.4809086901713 224.78562215708183 416.5190913098287 224.78562215708183 423.854908997452 229.02138114187147L554.1451008430486 304.2443352034037C561.4809185306719 308.47890869729355 566.0000098405006 316.3067051083111 566.0000098405006 324.7770375869906V475.2229457100551C566.0000098405006 483.69327818873455 561.4809185306719 491.5210745997522 554.1451008430486 495.7568335845417L423.854908997452 570.979787646074C416.5190913098287 575.2143611399638 407.4809086901713 575.2143611399638 400.145091002548 570.9786021551743L269.8548991569514 495.7556480936421C262.5190814693281 491.5210745997522 257.99999015949936 483.69327818873455 257.99999015949936 475.2229457100551V324.7770375869906C257.99999015949936 316.3067051083111 262.5190814693281 308.47890869729355 269.8548991569514 304.24314971250396L400.145091002548 229.0201956509717Z "
+          filter="url(#nnneon-filter2)"
+          opacity="0.24"></path><path
+          d="M376.145091002548 229.0201956509717C383.4809086901713 224.78562215708183 392.5190913098287 224.78562215708183 399.854908997452 229.02138114187147L530.1451008430486 304.2443352034037C537.4809185306719 308.47890869729355 542.0000098405006 316.3067051083111 542.0000098405006 324.7770375869906V475.2229457100551C542.0000098405006 483.69327818873455 537.4809185306719 491.5210745997522 530.1451008430486 495.7568335845417L399.854908997452 570.979787646074C392.5190913098287 575.2143611399638 383.4809086901713 575.2143611399638 376.145091002548 570.9786021551743L245.85489915695138 495.7556480936421C238.5190814693281 491.5210745997522 233.99999015949936 483.69327818873455 233.99999015949936 475.2229457100551V324.7770375869906C233.99999015949936 316.3067051083111 238.5190814693281 308.47890869729355 245.85489915695138 304.24314971250396L376.145091002548 229.0201956509717Z "
+          filter="url(#nnneon-filter2)"
+          opacity="0.24"></path><path
+          d="M388.145091002548 229.0201956509717C395.4809086901713 224.78562215708183 404.5190913098287 224.78562215708183 411.854908997452 229.02138114187147L542.1451008430486 304.2443352034037C549.4809185306719 308.47890869729355 554.0000098405006 316.3067051083111 554.0000098405006 324.7770375869906V475.2229457100551C554.0000098405006 483.69327818873455 549.4809185306719 491.5210745997522 542.1451008430486 495.7568335845417L411.854908997452 570.979787646074C404.5190913098287 575.2143611399638 395.4809086901713 575.2143611399638 388.145091002548 570.9786021551743L257.8548991569514 495.7556480936421C250.5190814693281 491.5210745997522 245.99999015949936 483.69327818873455 245.99999015949936 475.2229457100551V324.7770375869906C245.99999015949936 316.3067051083111 250.5190814693281 308.47890869729355 257.8548991569514 304.24314971250396L388.145091002548 229.0201956509717Z "
+        ></path></g
+      ></svg
+    >
+  </div> -->
+
+  <!-- Contenido -->
+  <div class="max-w-6xl mx-auto relative z-10">
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-teal">
+      Portafolio Profesional
+    </h2>
+    <p class="text-lg mb-12 text-center max-w-3xl mx-auto leading-relaxed">
+      A continuación, te presento algunos proyectos relevantes donde he aplicado
+      metodologías ágiles, buenas prácticas de desarrollo y tecnologías modernas
+      para resolver necesidades reales de negocio.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {
+        projects.map((project) => (
+          <Card
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            link={project.link}
+            tags={project.tags}
+          />
+        ))
+      }
+    </div>
+
+    <!-- <div class="text-center mt-14">
+      <a
+        href="#"
+        class="inline-block px-8 py-3 bg-white text-teal-600 font-medium rounded-full hover:bg-gray-100 transition duration-300 shadow-md hover:shadow-xl"
+      >
+        Ver más proyectos
+      </a>
+    </div> -->
+  </div>
 </section>
